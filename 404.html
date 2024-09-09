@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      var fullPath = window.location.pathname;
+
+      if (fullPath.startsWith("/activity/")) {
+        var subPath = fullPath.substring("/activity/".length);
+        if (subPath) {
+          window.location.href = "/news/" + subPath;
+        } else {
+          window.location.href = "/news/";
+        }
+      } else if (fullPath.startsWith("/activity")) {
+        window.location.href = "/news/";
+      } else if (fullPath.startsWith("/news/")) {
+        window.location.href = "/news/";
+      } else if (fullPath.startsWith("/map/")) {
+        var subPath = fullPath.substring("/map/".length);
+        if (subPath) {
+          window.location.href = "/map/";
+        } else {
+          window.location.href = "/map/";
+        }
+      } else if (fullPath.startsWith("/about/")) {
+        var subPath = fullPath.substring("/about/".length);
+        if (subPath) {
+          window.location.href = "/about/";
+        } else {
+          window.location.href = "/about/";
+        }
+      } else {
+        window.location.href = "/";
+      }
+    });
+  </script>
+</head>
+<body>
+  <p>If you are not redirected, <a href="/">click here to return to the homepage</a>.</p>
+</body>
+</html>
